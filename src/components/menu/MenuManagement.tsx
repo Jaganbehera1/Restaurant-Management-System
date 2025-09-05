@@ -20,7 +20,7 @@ const MenuManagement: React.FC = () => {
     image: ''
   });
 
-  const categories = ['appetizers', 'mains', 'desserts', 'beverages'];
+  const categories = ['Sandvich', 'Salads', 'Burgers','Bakes & Meals','Choice of Pasta','Pizza','Extra Toppings','Hearth Stone Special','Soups','Starters','Main Course','Noodles','Rice','Chats','Subziyan','Dals','Breads','Rice / Pulao / Biryanis / Raitas','Dessert','Meal For One (North Indian)','South-Indian','Dosas','Uttapam','Sweets','Extra','Fresh Juices','Smoothies & Mocktails','Ice Cream','Sundaes','Tea & Coffee','Beverages'];
   const types = ['veg', 'non-veg'];
 
   const handleSubmit = async (e: React.FormEvent) => {

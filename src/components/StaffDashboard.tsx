@@ -114,6 +114,40 @@ const StaffDashboard: React.FC = () => {
           <h1 className="text-3xl font-bold text-gray-900">Staff Dashboard</h1>
           <p className="text-gray-600 mt-1">Manage orders, menu, and analytics</p>
         </div>
+
+        {/* Table Status Section */}
+        <Card>
+        {/* <CardHeader className="pb-2">
+          <h2 className="text-sm font-semibold text-gray-900">Table Status</h2>
+        </CardHeader> */}
+        <CardContent>
+          <div className="grid grid-cols-5 md:grid-cols-10 gap-1 justify-center">
+            {[...Array(20)].map((_, i) => {
+              const tableNumber = i + 1;
+              const activeOrder = orders.find(
+                (o) => o.table_number === tableNumber && o.status !== "completed"
+              );
+              const isOccupied = !!activeOrder;
+            
+              return (
+                <div
+                  key={tableNumber}
+                  className={`p-2 rounded-md text-center text-xs font-medium w-14 h-12 flex flex-col justify-center ${
+                    isOccupied
+                      ? "bg-red-100 border border-red-300"
+                      : "bg-green-100 border border-green-300"
+                  }`}
+                >
+                  <p className="font-bold">T{tableNumber}</p>
+                  <p>{isOccupied ? "Occup" : "Avail"}</p>
+                </div>
+              );
+            })}
+          </div>
+        </CardContent>
+      </Card>
+
+
         <div className="flex items-center gap-4">
           <Button
             variant="ghost"

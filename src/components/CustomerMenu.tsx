@@ -30,7 +30,7 @@ const CustomerMenu: React.FC = () => {
   
   const tableNumber = searchParams.get('table');
 
-  const categories = ['all', 'appetizers', 'mains', 'desserts', 'beverages'];
+  const categories = ['Sandvich', 'Salads', 'Burgers','Bakes & Meals','Choice of Pasta','Pizza','Extra Toppings','Hearth Stone Special','Soups','Starters','Main Course','Noodles','Rice','Chats','Subziyan','Dals','Breads','Rice / Pulao / Biryanis / Raitas','Dessert','Meal For One (North Indian)','South-Indian','Dosas','Uttapam','Sweets','Extra','Fresh Juices','Smoothies & Mocktails','Ice Cream','Sundaes','Tea & Coffee','Beverages'];
 
   const filteredItems = menuItems.filter(item =>
     (selectedCategory === 'all' || item.category === selectedCategory) &&
@@ -369,19 +369,19 @@ const CustomerMenu: React.FC = () => {
             />
           </div>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-2">
-            {categories.map((category) => (
-              <Button
-                key={category}
-                variant={selectedCategory === category ? 'primary' : 'secondary'}
-                size="sm"
-                onClick={() => setSelectedCategory(category)}
-                className="capitalize"
-              >
-                {category}
-              </Button>
-            ))}
+          {/* Category Dropdown Filter */}
+          <div className="flex justify-center mb-4">
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            >
+              {categories.map((category) => (
+                <option key={category} value={category} className="capitalize">
+                  {category}
+                </option>
+              ))}
+            </select>
           </div>
 
           {/* Veg/Non-Veg Filter */}
