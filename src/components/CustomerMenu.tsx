@@ -496,28 +496,31 @@ const CustomerMenu: React.FC = () => {
                       
                      {item.available && (
                        <div className="flex items-center gap-2 sm:gap-3">
-                         <div className="flex items-center gap-1 sm:gap-2">
-                          <Button
-                            size="sm"
-                            variant="ghost"
-                            onClick={() => updateQuantity(item.id, -1)}
-                            disabled={!quantities[item.id]}
-                           className="w-6 h-6 sm:w-8 sm:h-8 p-0 rounded-full"
-                          >
-                            <Minus className="w-4 h-4" />
-                          </Button>
-                         <span className="w-6 sm:w-8 text-center font-medium text-sm">
-                            {quantities[item.id] || 0}
-                          </span>
-                          <Button
-                            size="sm"
-                            variant="ghost"
-                            onClick={() => updateQuantity(item.id, 1)}
-                           className="w-6 h-6 sm:w-8 sm:h-8 p-0 rounded-full"
-                          >
-                            <Plus className="w-4 h-4" />
-                          </Button>
-                         </div>
+                          <div className="flex items-center gap-1 sm:gap-2">
+                            <Button
+                              size="sm"
+                              variant="ghost"
+                              onClick={() => updateQuantity(item.id, -1)}
+                              disabled={!quantities[item.id]}
+                              className="w-8 h-8 sm:w-9 sm:h-9 p-0 rounded-full flex items-center justify-center"
+                            >
+                              <Minus className="w-4 h-4" />
+                            </Button>
+                                              
+                            <span className="w-8 text-center font-medium text-base sm:text-sm">
+                              {quantities[item.id] || 0}
+                            </span>
+                                              
+                            <Button
+                              size="sm"
+                              variant="ghost"
+                              onClick={() => updateQuantity(item.id, 1)}
+                              className="w-8 h-8 sm:w-9 sm:h-9 p-0 rounded-full flex items-center justify-center"
+                            >
+                              <Plus className="w-4 h-4" />
+                            </Button>
+                          </div>
+
                         
                          <Button
                            size="sm"
