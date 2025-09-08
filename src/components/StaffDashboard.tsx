@@ -454,7 +454,10 @@ const StaffDashboard: React.FC = () => {
               <CardContent>
                 <div className="space-y-3 max-h-64 overflow-y-auto">
                   {orders
-                    .filter(order => order.status === 'completed')
+                    .filter(order => 
+                      order.status === 'completed' &&
+                      new Date(order.created_at) >= new Date(Date.now() - 2 * 24 * 60 * 60 * 1000) // only last 2 days
+                    )
                     .slice(0, 10)
                     .map((order) => (
                       <motion.div
